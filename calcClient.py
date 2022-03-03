@@ -26,7 +26,7 @@ def genera_richieste(num,address,port):
     primoNumero=random.randint(0,100)#Random primo numero
     operazione=random.randint(0,3)#Random dell'operazione
     secondoNumero=random.randint(0,100)#Random seconda operazione
-    #STABILISCO IL NUMERO A UN'OPERAZIONE
+    #STABILISCO IL NUMERO ALL' OPERAZIONE
     if operazione=="0": 
        operazione="+"
     elif operazione=="1":
