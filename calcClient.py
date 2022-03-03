@@ -23,9 +23,9 @@ def genera_richieste(num,address,port):
         print(f"{threading.current_thread().name} Qualcosa è andato storto, sto uscendo... \n")
         sys.exit()
     #1. rimpiazzare questa parte con la generazione di operazioni e numeri random, non vogliamo inviare sempre 3+5 
-    primoNumero=random.randInt(0,100)#Random primo numero
-    operazione=random.randInt(0,3)#Random dell'operazione
-    secondoNumero=random.randInt(0,100)#Random seconda operazione
+    primoNumero=random.randint(0,100)#Random primo numero
+    operazione=random.randint(0,3)#Random dell'operazione
+    secondoNumero=random.randint(0,100)#Random seconda operazione
     #STABILISCO IL NUMERO A UN'OPERAZIONE
     if operazione=="0": 
        operazione="+"
@@ -47,8 +47,11 @@ def genera_richieste(num,address,port):
     messaggio={'primoNumero':primoNumero,
         'operazione':operazione,
         'secondoNumero':secondoNumero}
-    #RICEVO
+    
     messaggio=json.dumps(messaggio)
+    s.sendall(messaggio.encode("UTF-8"))
+    data=s.recv(1024)
+    print("Ris: ", data.decode())
 
 
     if not data:
