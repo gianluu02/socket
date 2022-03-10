@@ -27,13 +27,13 @@ def genera_richieste(num,address,port):
     operazione=random.randint(0,3)#Random dell'operazione
     secondoNumero=random.randint(0,100)#Random seconda operazione
     #STABILISCO IL NUMERO ALL' OPERAZIONE
-    if operazione=="0": 
+    if operazione==0: 
        operazione="+"
-    elif operazione=="1":
+    elif operazione==1:
        operazione="-"
-    elif operazione=="2":
+    elif operazione==2:
        operazione="*"
-    elif operazione=="3":
+    elif operazione==3:
        operazione="/"
     
     print(primoNumero,secondoNumero,operazione)
